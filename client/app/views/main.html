@@ -1,0 +1,21 @@
+<div class="jumbotron" ng-if="!signedIn">
+  <h2>Sign in</h2>
+
+  <form>
+    <div class="form-group">
+      <input type="email" class="form-control" placeholder="Enter email" ng-model="user.email" required>
+    </div>
+    <div class="form-group">
+      <input type="password" class="form-control" placeholder="Password" ng-model="user.password" required>
+    </div>
+    <button type="submit" class="btn btn-default" ng-click="signIn(user)">Submit</button>
+  </form>
+</div>
+
+<div ng-if="signedIn">
+  <h2>Your Friends</h2>
+
+  <ul>
+    <li ng-repeat="friend in friends">{{ friend.onlineId }}</li>
+  </ul>
+</div>
